@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="slider.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
+  <script src="slider.js"></script>
+</head>
+
+<body>
+
+  <script type="text/template" id="slider-template">
+	<b><%-name%></b><span class="current-value">0</span></br></br>
+	<div class="bar">
+		<div class="marker"></div>
+	</div>            
+  </script>
+ 
+  <script>
+  
+	var options = {
+		elemId: "color-box",
+		tmpl: _.template(document.getElementById("slider-template").innerHTML.trim()),
+		sliders: [
+			{colorName: 'RED'},
+			{colorName: 'GREEN'},				
+			{colorName: 'BLUE'}				
+		]	
+	};
+	var colorBox = new ColorBox (options);
+		
+  </script>
+</body>
+
+</html>
